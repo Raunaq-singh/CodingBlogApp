@@ -1,0 +1,21 @@
+<%include partials/header%>
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        <%=found.title%>
+    </div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%=found.image%>">
+            <div class="content">
+                <span><%=found.created.toDateString()%></span>
+            </div>
+            <div class="description">
+                <p><%=found.body%></p>
+            </div>
+            <a href="/blogs/<%=found._id%>/edit" class="ui black basic button">Edit!</a>
+            <form id="delete" action="/blogs/<%=found._id%>?_method=DELETE" method="POST">
+                <button class="ui red button">Delete!</button>
+            </form>
+        </div>
+    </div>
+</div>
